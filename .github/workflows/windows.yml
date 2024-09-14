@@ -26,7 +26,7 @@ jobs:
             - { icon: '🟦', sys: mingw64 }
             - { icon: '🟨', sys: ucrt64  }
             - { icon: '🟧', sys: clang64 }
-            - { icon: '🟪', sys: clangarm64 }
+            # - { icon: '🟪', sys: clangarm64 } broken
     name: 🚧${{ matrix.icon }} ${{ matrix.sys }}
     defaults:
       run:
