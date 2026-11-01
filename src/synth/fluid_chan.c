@@ -636,6 +636,12 @@ fluid_channel_remove_monolist(fluid_channel_t *chan, int i, int *i_prev)
  */
 void fluid_channel_clear_monolist(fluid_channel_t *chan)
 {
+    /* With an empty list, monolist[i_last].note is stale and must not become prev_note */
+    if(!chan->n_notes)
+    {
+        return;
+    }
+
     /* keeps trace off the most recent note played */
     chan->prev_note = chan->monolist[chan->i_last].note;
 
